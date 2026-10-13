@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+     * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 230px;
+            height: 100%;
+            background: #ffffff;
+            color: rgb(2, 2, 2);
+
+            position: fixed;
+            top: 0;
+            left: -230px;
+
+            transition: 0.3s;
+            padding-top: 80px;
+            border: 1px solid rgb(59, 59, 59);
+            z-index: 12;
+        }
+
+        /* Jab sidebar open ho */
+        .sidebar.open {
+            left: 0;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar li {
+            padding: 15px 25px;
+            border-bottom: 1px solid #666;
+        }
+
+        /* Menu button */
+        #menuBtn {
+            position: fixed;
+            top: 10px;
+            left: 20px;
+
+            font-size: 30px;
+            padding: 8px 15px;
+            cursor: pointer;
+
+            background: #000000;
+            color: rgb(255, 254, 254);
+            border: none;
+
+            z-index: 1000;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+             <button id="menuBtn">☰</button>
+            <div class="sidebar" id="sidebar">
+        <ul>
+            <li>💻 EC</li>
+            <li>💻 Reports</li>
+            <li>💻 CN Issuance</li>
+            <li>💻 Retail</li>
+            <li>💻 Shipment Tracking</li>
+            <li>💻 Profile</li>
+        </ul>
+    </div>
+          
+        
+    </header>
+    <br><br><br><br><br>
+    <div class="contain">
+    <fieldset class="info-box">
+        <legend>Consignee Info</legend>
+
+        <div class="consignee-row">
+
+            <div class="form-group">
+                <label>Phone No <span>(*)</span></label>
+                <input style="width: 170px; border: 1.5px solid rgb(75, 75, 75);" type="number" placeholder="03xxxxxxxxx">
+            </div>
+
+            <div class="form-group">
+                <label>Name <span>(*)</span></label>
+                <input style="width: 170px; border: 1.5px solid rgb(75, 75, 75);" type="text">
+            </div>
+
+            <div class="form-group">
+                <label>CNIC</label>
+                <input style="width: 170px;border: 1.5px solid rgb(75, 75, 75);" type="number">
+            </div>
+
+            <div class="form-group">
+                <label>Address <span>(*)</span></label>
+                <textarea style="width: 170px;border: 1.5px solid rgb(75, 75, 75);"></textarea>
+            </div>
+
+        </div>
+    </fieldset>
+    <br>
+    <fieldset class="info-box">
+        <legend>Shipper info</legend>
+        <div class="shipper-row">
+            <div class="form-group">
+                <label>Phone No <span>(*)</span></label>
+                <input style="width: 170px;border: 1.5px solid rgb(75, 75, 75);" type="number" placeholder="03xxxxxxxxx">
+            </div>
+            <div class="form-group">
+                <label>Name <span>(*)</span></label>
+                <input style="width: 170px;border: 1.5px solid rgb(75, 75, 75);" type="text">
+            </div>
+            <div class="form-group">
+                <label>CNIC</label>
+                <input style="width: 170px;border: 1.5px solid rgb(75, 75, 75);" type="number">
+            </div>
+            <div class="form-group">
+                <label>Address <span>(*)</span></label>
+                <textarea style="width: 170px;border: 1.5px solid rgb(75, 75, 75);"></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset class="info-box">
+        <legend>Shipment info</legend>
+        <div class="shipment-row">
+            <div class="form-group">
+                <label for="nor">Consigment Type</label>
+                <select style="border: 1.5px solid rgb(75, 75, 75);" name="consigment" id="nor">
+                    <option value="normal">Normal</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="dest">Destination<span>(*)</span></label>
+                <select style="border: 1.5px solid rgb(75, 75, 75);" name="Destination" id="dest">
+                    <option value="KHI">KHI-Karachi</option>
+                    <option value="LHR">LHE-Lahore</option>
+                    <option value="ISL">ISL-Islamabad</option>
+                    <option value="PES">PES-Peshawar</option>
+                    <option value="HYD">HYD-Hyderabad</option>
+                    <option value="QUE">QUE-Queta</option>
+
+                </select>
+            </div>
+            <div class="dimensions">
+
+                <div>
+                    <label>L (cm)</label>
+                    <input style="border: 1.5px solid rgb(75, 75, 75);" type="text" id="le">
+                </div>
+                <div>
+                    <label>W (cm)</label>
+                    <input style="border: 1.5px solid rgb(75, 75, 75);" type="text" id="we">
+                </div>
+                <div>
+                    <label>H (cm)</label>
+                    <input style="border: 1.5px solid rgb(75, 75, 75);" type="text" id="hi">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="dw">Dense Weight</label>
+                <input style=" width: 170px; border: 1.5px solid rgb(75, 75, 75); height: 24px; bottom: -2px; position: relative;" type="number" id="dew">
+                <br>
+
+            </div>
+            <div class="weight">
+                <div class="form-group">
+                    <label for="">Weight</label>
+                    <input style="border: 1.5px solid rgb(75, 75, 75);" type="text" class="form-control form-control-sm" readonly value="0" id="val-1">
+                </div>
+                <div class="form-group">
+                    <Label>Peices</Label>
+                    <input style="border: 1.5px solid rgb(75, 75, 75);" type="text">
+                </div>
+                <div class="form-group">
+                    <label for="">Payment Mode</label>
+                    <select style="height: 47px; border: 1.5px solid rgb(75, 75, 75); width: 160px;" name="Mode" id="md">
+                        <option value="cash">Cash</option>
+                        <option value="cash">QR Code (HBL)</option>
+                        <option value="cash">Credit Card</option>
+                        <option value="cash">QR Code (Jazz Cash)</option>
+                    </select>
+
+                </div>
+                <div class="form-group">
+                    <label style="position: relative; right: -24px;" for="pay">Payment Transaction Id</label>
+                    <input id="pay" style="width: 170px; position: relative;border: 1.5px solid rgb(75, 75, 75);; right: -24px;" type="text"
+                        class="form-control form-control-sm" readonly value="0">
+
+
+                </div>
+                <div class="shipment-row">
+                    <div class="form-group">
+                        <label for="ser">Service Type<span>(*)</span></label>
+                        <select style="border: 1.5px solid rgb(75, 75, 75);" name="Service" id="ser">
+                            <option value="exp">Express</option>
+                            <option value="Askari Mango Fiesta 04Kg" data-isweightcontrolled="false"
+                                data-maxweightallowed="0" data-minweightallowed="0">Askari Mango Fiesta 04Kg</option>
+                            <option value="Askari Mango Fiesta 05Kg" data-isweightcontrolled="false"
+                                data-maxweightallowed="0" data-minweightallowed="0">Askari Mango Fiesta 05Kg</option>
+                            <option value="Breakfast Delivery" data-isweightcontrolled="false" data-maxweightallowed="0"
+                                data-minweightallowed="0">Breakfast Delivery</option>
+                            <option value="Date Box 2Kg" data-isweightcontrolled="false" data-maxweightallowed="0"
+                                data-minweightallowed="0">Date Box 2Kg</option>
+                            <option value="DC Box" data-isweightcontrolled="false" data-maxweightallowed="0"
+                                data-minweightallowed="0">DC Box</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cp">Coupon No</label>
+                        <input style="border: 1.5px solid rgb(75, 75, 75);" type="text" id="cp">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pa-co">Pakage Content<span>(*)</span></label>
+                        <textarea style="width: 142px;border: 1.5px solid rgb(75, 75, 75);" name="" id="pa-co"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label style="position: relative; right: -28px;" for="sp-in">Special Instruction</label>
+
+                        <textarea style="position: relative;border: 1.5px solid rgb(75, 75, 75); right: -28px;" name="" id="sp-in"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="ref">Referal Code</label>
+                        <input style="border: 1.5px solid rgb(75, 75, 75);" type="text" id="ref">
+                    </div>
+                </div>
+
+
+
+            </div>
+
+
+
+    </fieldset><br><br><br>
+    <hr>
+
+    <div class="tt"><br>
+        <div class="form-group">
+            <label for="tc">Total Charges</label>
+            <input style="width: 90%;border: 1.5px solid rgb(75, 75, 75);" type="text" id="tc">
+        </div><br><br>
+        <div class="form-group">
+            <label for="gst">GST Charges</label>
+            <input style="width: 90%; border: 1.5px solid rgb(75, 75, 75); background-color: #eaecf4;" type="text" readonly value="0.00" id="gst">
+        </div>
+        <br><br>
+        <div class="form-group">
+            <label for="ta">Total Amount</label>
+            <input style="width: 90%; border: 1.5px solid rgb(75, 75, 75);background-color: #eaecf4;" type="text" readonly value="0.00" id="ta">
+        </div>
+        <div class="slip-btn-box">
+            <button type="button" id="generateSlip">
+                Generate Slip
+            </button>
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+        </div>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
